@@ -9,7 +9,13 @@ public class UIManager : MonoBehaviour
     public Animator startButton;
     public Animator settingsButton;
     public Animator dialog;
+    public Animator contentPanel;
 
+    public void ToggleMenu()
+    {
+        bool isHidden = contentPanel.GetBool("isHidden");
+        contentPanel.SetBool("isHidden", !isHidden);
+    }
     
     public void OpenSettings()
     {
@@ -19,9 +25,9 @@ public class UIManager : MonoBehaviour
     }
     public void CloseSettings()
         {
-            startButton.SetBool("isHiiden", false);
-            settingsButton.SetBool("isHiiden", false);
-            dialog.SetBool("isHiiden", true);
+            startButton.SetBool("isHidden", false);
+            settingsButton.SetBool("isHidden", false);
+            dialog.SetBool("isHidden", true);
         }
     public void StartGame()
         {
